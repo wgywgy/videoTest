@@ -7,7 +7,7 @@
 
 #import "DQVideoMainViewController.h"
 
-#import "DQBaseMarco.h"
+#import "DQRVBaseMarco.h"
 #import "DQRewardVideoControlView.h"
 #import "DQVideoPlayerView.h"
 

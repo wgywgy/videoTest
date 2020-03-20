@@ -10,6 +10,8 @@
 @property (strong, nonatomic) IBOutlet UIView *contentView;
 @property(nonatomic, assign) BOOL pauseCount;
 
+@property (nonatomic, strong) CAShapeLayer *txtLabelBorderLayer;
+
 @end
 
 @implementation DQVideoTopView
@@ -41,6 +43,11 @@
     
     self.pauseCount = NO;
     self.elapseSecond = 0;
+    
+    self.countLabel.leftInset = 9;
+    self.countLabel.rightInset = 9;
+    self.countLabel.topInset = 8;
+    self.countLabel.bottomInset = 8;
 }
 
 - (void)toggleMute:(BOOL)mute {
@@ -92,7 +99,8 @@
     }
     
     if (self.countSecond > 0) {
-        [self.countDownBtn setTitle:[NSString stringWithFormat:@"%d", self.countSecond] forState:UIControlStateNormal];
+//        [self.countDownBtn setTitle:[NSString stringWithFormat:@"%d", self.countSecond] forState:UIControlStateNormal];
+        [self setCountLabelWithStr:[NSString stringWithFormat:@"%d", self.countSecond]];
         self.countSecond--;
         self.elapseSecond++;
         
@@ -131,7 +139,7 @@
 }
 
 - (void)changeToCloseState {
-    self.countDownBtn.hidden = YES;
+    self.countLabel.hidden = YES;
     self.skipBtn.hidden = YES;
     self.soundBtn.hidden = YES;
     self.closeBtn.hidden = NO;
@@ -141,5 +149,36 @@
     }
 }
 
+- (void)setCountLabelWithStr:(NSString *)text {
+    self.countLabel.text = text;
+    [self.countLabel setNeedsLayout];
+    [self.countLabel layoutIfNeeded];
+    
+    UIBezierPath *maskPath =
+    [UIBezierPath bezierPathWithRoundedRect:self.countLabel.bounds
+                          byRoundingCorners:UIRectCornerTopLeft | UIRectCornerTopRight | UIRectCornerBottomLeft | UIRectCornerBottomRight
+                                cornerRadii:CGSizeMake(13, 13)];
+    
+    CAShapeLayer *maskLayer = [[CAShapeLayer alloc] init];
+    maskLayer.frame = self.countLabel.bounds;
+    maskLayer.path = maskPath.CGPath;
+    self.countLabel.layer.mask = maskLayer;
+    
+    [self.txtLabelBorderLayer removeFromSuperlayer];
+    self.txtLabelBorderLayer.path = maskPath.CGPath;
+    
+    self.txtLabelBorderLayer.frame = self.countLabel.bounds;
+    [self.countLabel.layer addSublayer:self.txtLabelBorderLayer];
+}
+
+- (CAShapeLayer *)txtLabelBorderLayer {
+    if (!_txtLabelBorderLayer) {
+        _txtLabelBorderLayer = [CAShapeLayer new];
+        _txtLabelBorderLayer.lineWidth = 1;
+        _txtLabelBorderLayer.strokeColor = [UIColor whiteColor].CGColor;
+        _txtLabelBorderLayer.fillColor = [UIColor clearColor].CGColor;
+    }
+    return _txtLabelBorderLayer;
+}
 
 @end

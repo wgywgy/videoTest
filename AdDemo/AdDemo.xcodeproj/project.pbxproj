@@ -31,6 +31,7 @@
 		046F6905242211A300795065 /* DQVideoBottomView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 046F6904242211A300795065 /* DQVideoBottomView.xib */; };
 		046F69092422205400795065 /* DQRewardEndBgView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 046F69082422205400795065 /* DQRewardEndBgView.xib */; };
 		046F690C2422206000795065 /* DQRewardEndBgView.m in Sources */ = {isa = PBXBuildFile; fileRef = 046F690B2422206000795065 /* DQRewardEndBgView.m */; };
+		047E77032424DAA400841B8D /* DQRVPaddingLabel.m in Sources */ = {isa = PBXBuildFile; fileRef = 047E77022424DAA400841B8D /* DQRVPaddingLabel.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -83,11 +84,13 @@
 		046F68FB2422067D00795065 /* DQVideoMetaInfo.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DQVideoMetaInfo.h; sourceTree = "<group>"; };
 		046F68FC2422067D00795065 /* DQVideoMetaInfo.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DQVideoMetaInfo.m; sourceTree = "<group>"; };
 		046F6900242206DC00795065 /* DQVideoTopView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DQVideoTopView.xib; sourceTree = "<group>"; };
-		046F69032422096800795065 /* DQBaseMarco.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DQBaseMarco.h; sourceTree = "<group>"; };
+		046F69032422096800795065 /* DQRVBaseMarco.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DQRVBaseMarco.h; sourceTree = "<group>"; };
 		046F6904242211A300795065 /* DQVideoBottomView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DQVideoBottomView.xib; sourceTree = "<group>"; };
 		046F69082422205400795065 /* DQRewardEndBgView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DQRewardEndBgView.xib; sourceTree = "<group>"; };
 		046F690A2422206000795065 /* DQRewardEndBgView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DQRewardEndBgView.h; sourceTree = "<group>"; };
 		046F690B2422206000795065 /* DQRewardEndBgView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DQRewardEndBgView.m; sourceTree = "<group>"; };
+		047E77012424DAA400841B8D /* DQRVPaddingLabel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DQRVPaddingLabel.h; sourceTree = "<group>"; };
+		047E77022424DAA400841B8D /* DQRVPaddingLabel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DQRVPaddingLabel.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -112,6 +115,7 @@
 		044CD1DC24230FC900526024 /* Control */ = {
 			isa = PBXGroup;
 			children = (
+				047E76FD242465CB00841B8D /* Compent */,
 				046F690A2422206000795065 /* DQRewardEndBgView.h */,
 				046F690B2422206000795065 /* DQRewardEndBgView.m */,
 				046F69082422205400795065 /* DQRewardEndBgView.xib */,
@@ -250,9 +254,18 @@
 		046F69022422095700795065 /* Marco */ = {
 			isa = PBXGroup;
 			children = (
-				046F69032422096800795065 /* DQBaseMarco.h */,
+				046F69032422096800795065 /* DQRVBaseMarco.h */,
 			);
 			path = Marco;
+			sourceTree = "<group>";
+		};
+		047E76FD242465CB00841B8D /* Compent */ = {
+			isa = PBXGroup;
+			children = (
+				047E77012424DAA400841B8D /* DQRVPaddingLabel.h */,
+				047E77022424DAA400841B8D /* DQRVPaddingLabel.m */,
+			);
+			path = Compent;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -373,6 +386,7 @@
 				046F690C2422206000795065 /* DQRewardEndBgView.m in Sources */,
 				046F68E12421CB9300795065 /* DQVideoTopView.m in Sources */,
 				046F68FA2422067000795065 /* DQVideoBottomModel.m in Sources */,
+				047E77032424DAA400841B8D /* DQRVPaddingLabel.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -531,7 +545,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 97SMNGCX9Q;
 				INFOPLIST_FILE = AdDemo/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -549,7 +563,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 97SMNGCX9Q;
 				INFOPLIST_FILE = AdDemo/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",

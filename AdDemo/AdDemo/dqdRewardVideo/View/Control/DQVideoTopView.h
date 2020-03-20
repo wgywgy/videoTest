@@ -6,14 +6,17 @@
 //
 
 #import <UIKit/UIKit.h>
+//#import "DQBorderLabel.h"
+#import "DQRVPaddingLabel.h"
 
 NS_ASSUME_NONNULL_BEGIN
 
 @interface DQVideoTopView : UIView
-@property(nonatomic, strong) IBOutlet UIButton *countDownBtn;
-@property(nonatomic, strong) IBOutlet UIButton *soundBtn;
-@property(nonatomic, strong) IBOutlet UIButton *skipBtn;
-@property(nonatomic, strong) IBOutlet UIButton *closeBtn;
+@property (weak, nonatomic) IBOutlet DQRVPaddingLabel *countLabel;
+//@property(nonatomic, strong) IBOutlet DQBorderLabel *countDownBtn;
+@property(nonatomic, weak) IBOutlet UIButton *soundBtn;
+@property(nonatomic, weak) IBOutlet UIButton *skipBtn;
+@property(nonatomic, weak) IBOutlet UIButton *closeBtn;
 
 
 @property(nonatomic, assign) BOOL isMute;

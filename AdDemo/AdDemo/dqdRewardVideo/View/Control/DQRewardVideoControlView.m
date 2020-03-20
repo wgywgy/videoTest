@@ -6,7 +6,7 @@
 //
 
 #import "DQRewardVideoControlView.h"
-#import "DQBaseMarco.h"
+#import "DQRVBaseMarco.h"
 
 #import "DQVideoTopView.h"
 #import "DQVideoBottomView.h"
@@ -117,8 +117,8 @@
     }];
     [alertController addAction:continueAction];
     
-    [cancelAction setValue:[UIColor grayColor] forKey:@"titleTextColor"];
-    [continueAction setValue:[UIColor systemBlueColor] forKey:@"titleTextColor"];
+    [cancelAction setValue:DQRVColorFromRGBAlpha(0x888888, 1) forKey:@"titleTextColor"];
+    [continueAction setValue:DQRVColorFromRGBAlpha(0x3A76DE, 1) forKey:@"titleTextColor"];
     
     [self.baseController presentViewController:alertController animated:YES completion:nil];
 }

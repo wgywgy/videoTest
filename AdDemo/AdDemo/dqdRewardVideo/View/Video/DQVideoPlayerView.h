@@ -13,7 +13,7 @@ NS_ASSUME_NONNULL_BEGIN
 
 @optional
 - (void)didPlayFinish:(DQVideoPlayerView *)videoPlayerView;
-
+- (void)didPlayFinishWithErr:(DQVideoPlayerView *)videoPlayerView;
 @end
 
 @interface DQVideoPlayerView : UIView
